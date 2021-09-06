@@ -24,47 +24,6 @@ export default App = () => {
   const [isButtonLoading, setIsButtonLoading] = useState(false);
 
   const [userToken, setUserToken] = useState(null);
-  // setUserToken(asynctoken);
-
-
-
-
-
-
-  // const loginReducer = (prevState, action) => {
-  //   switch( action.type ) {
-  //     case 'RETRIEVE_TOKEN': 
-  //       return {
-  //         ...prevState,
-  //         userToken: action.token,
-  //         isLoading: false,
-  //       };
-  //     case 'LOGIN': 
-  //       return {
-  //         ...prevState,
-  //         userName: action.id,
-  //         userToken: action.token,
-  //         isLoading: false,
-  //       };
-  //     case 'LOGOUT': 
-  //       return {
-  //         ...prevState,
-  //         userName: null,
-  //         userToken: null,
-  //         isLoading: false,
-  //       };
-  //     case 'REGISTER': 
-  //       return {
-  //         ...prevState,
-  //         userName: action.id,
-  //         userToken: action.token,
-  //         isLoading: false,
-  //       };
-  //   }
-  // };
-
-  // const [loginState, dispatch] = React.useReducer(loginReducer, initialLoginState);
-
 
   useEffect(() => {
     setTimeout(async () => {
@@ -72,7 +31,7 @@ export default App = () => {
 
       try {
         let thetoken = await AsyncStorage.getItem('token');
-        console.log('The fuckin token is :');
+        console.log('token :');
         console.log(thetoken);
         setUserToken(thetoken);
       } catch (e) {
@@ -121,6 +80,8 @@ export default App = () => {
       isBtnLoading: isButtonLoading
     }
   }, [])
+
+
 
   const RootStackScreen = () => (
     <RootStack.Navigator screenOptions={{ headerShown: false }}   >

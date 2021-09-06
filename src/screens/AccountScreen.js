@@ -5,7 +5,7 @@ import Spacer from '../components/Spacer'
 
 import { AuthContext } from '../context/AuthContext'
 
-const AboutScreen = () => {
+const AccountScreen = () => {
 
    const { goWithoutSignIn, signOut } = React.useContext(AuthContext)
 
@@ -18,6 +18,6 @@ const AboutScreen = () => {
    )
 }
 
-export default AboutScreen
+export default AccountScreen
 
 const styles = StyleSheet.create({})

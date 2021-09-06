@@ -1,17 +1,20 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import BottomTabNavigator from './BottomTabNavigator';
-import AboutScreen from '../AboutScreen';
+import AccountScreen from '../AccountScreen';
+import { AntDesign } from '@expo/vector-icons';
+import CreateTodoScreen from '../CreateTodoScreen';
 
-const AppScreen = () => {
+import { createStackNavigator } from '@react-navigation/stack';
+const AppScreen = ({ navigation }) => {
 
    const Drawer = createDrawerNavigator();
 
    return (
-      <Drawer.Navigator screenOptions={{ headerShown: true }} >
-         <Drawer.Screen name="Tab" component={BottomTabNavigator} />
-         <Drawer.Screen name="About" component={AboutScreen} />
+      <Drawer.Navigator>
+         <Drawer.Screen name="as" component={BottomTabNavigator} />
+         <Drawer.Screen name="Account" component={AccountScreen} />
       </Drawer.Navigator>
    )
 }

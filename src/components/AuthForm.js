@@ -75,7 +75,7 @@ const AuthForm = ({ formType }) => {
          <Spacer vertical={15} />
 
          {authType == 'Sign In' ? (
-            <Button accessoryLeft={isBtnLoading === true ? LoadingIndicator : null} disabled={email == '' || password == ''} status="primary" onPress={() => signIn({ email, password })}>Sign In</Button>
+            <Button disabled={email == '' || password == ''} status="primary" onPress={() => signIn({ email, password })}>Sign In</Button>
          ) : (
             <Button disabled={email == '' || password == ''} status="primary" onPress={() => signUp()}>Sign Up</Button>
 
@@ -115,7 +115,6 @@ export default AuthForm
 const styles = StyleSheet.create({
    container: {
       padding: 40,
-      marginTop: 70
-
+      marginTop: 10
    }
 })
